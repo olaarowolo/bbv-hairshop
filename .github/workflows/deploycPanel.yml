@@ -1,19 +1,30 @@
 name: Publish Website to cPanel
-on: 
+on:
   push:
     branches:
       - main
+
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  deploy:
+    name: Deploy to cPanel via FTP
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth:2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies and build (if needed)
+        # Add your build steps here (e.g., npm install, npm run build)
+        # Example:
+        # run: |
+        #   npm install
+        #   npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./ # or ./build, ./dist, depending on your build output
+          remote-dir: /shop.beautybyvickkylounge.com/ # or the directory on your cPanel server
