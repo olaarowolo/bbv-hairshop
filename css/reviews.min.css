@@ -1,0 +1,96 @@
+.tp-bg-cool-grey-100 {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    position: relative
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10
+}
+
+.prev {
+    left: 10px
+}
+
+.next {
+    right: 10px
+}
+
+.reviews-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px
+}
+
+@media (max-width:768px) {
+    .tp-mb-24 {
+        margin-bottom: 16px
+    }
+
+    .tp-p-10 {
+        padding: 8px
+    }
+
+    .tp-text-2xl {
+        font-size: 1.25rem
+    }
+
+    .tp-text-lg {
+        font-size: 1rem
+    }
+}
+
+.tp-mb-24 {
+    margin-bottom: 24px
+}
+
+.tp-p-10 {
+    padding: 10px
+}
+
+.tp-text-2xl {
+    font-size: 1.5rem
+}
+
+.tp-text-lg {
+    font-size: 1.125rem
+}
+
+.tp-font-overpass-semibold {
+    font-weight: 600
+}
+
+.tp-text-cool-grey-700 {
+    color: #4a4a4a
+}
+
+.tp-text-cool-grey-800 {
+    color: #3a3a3a
+}
+
+.tp-h-20 {
+    height: 20px
+}
+
+.tp-h-24 {
+    height: 24px
+}
+
+.whitespace-nowrap:hover {
+    text-decoration: underline
+}
